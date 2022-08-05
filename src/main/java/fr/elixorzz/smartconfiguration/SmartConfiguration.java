@@ -35,6 +35,10 @@ public abstract class SmartConfiguration<T> {
         }
     }
 
+    /**
+     * Load the configuration from the file
+     * @return
+     */
     public T load() {
         if (plugin == null) {
             Bukkit.getLogger().log(Level.SEVERE, "[SmartConfiguration] Please register SmartConfiguration");
@@ -73,6 +77,10 @@ public abstract class SmartConfiguration<T> {
         return null;
     }
 
+    /**
+     * Save the configuration to the file
+     * @param config
+     */
     protected void update(T config) {
         try {
             Files.delete(filePath);
@@ -82,6 +90,10 @@ public abstract class SmartConfiguration<T> {
         }
     }
 
+    /**
+     * Register the Plugin instance
+     * @param p
+     */
     public static void register(Plugin p) {
         plugin = p;
     }
